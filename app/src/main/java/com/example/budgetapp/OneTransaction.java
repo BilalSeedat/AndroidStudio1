@@ -2,13 +2,11 @@ package com.example.budgetapp;
 
 public class OneTransaction {
     private double amount;
-    private String date;
     private String category;
 
 
-    public OneTransaction(double amount, String date, String category) {
+    public OneTransaction(double amount, String category) {
         this.amount = amount;
-        this.date = date;
         this.category = category;
     }
 
@@ -20,19 +18,15 @@ public class OneTransaction {
         this.amount = amount;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String toString(){
+        return this.amount + " -- " + this.category;
     }
 }

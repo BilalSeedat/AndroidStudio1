@@ -18,7 +18,7 @@ public class Transactions extends AppCompatActivity {
         Log.d(TAG,"onCreate: Started.");
         ListView mListView = (ListView) findViewById(R.id.transactionList);
 
-        OneTransaction one = new OneTransaction(32.10, "29-03-20", "money");
+        //OneTransaction one = new OneTransaction(32.10, "29-03-20", "money");
 
     }
 }
