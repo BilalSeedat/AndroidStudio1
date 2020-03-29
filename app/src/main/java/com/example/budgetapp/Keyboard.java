@@ -59,7 +59,7 @@ public class Keyboard extends AppCompatActivity {
         });
 
         List<PieEntry> values = new ArrayList<>();
-        values.add(new PieEntry(,"leisure"));
+        values.add(new PieEntry(145,"leisure"));
         values.add(new PieEntry(140, "bills"));
         values.add(new PieEntry(175, "insurance"));
         values.add(new PieEntry(65, "Transport"));
