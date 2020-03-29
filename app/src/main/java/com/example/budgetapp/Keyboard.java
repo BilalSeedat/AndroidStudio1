@@ -1,23 +1,23 @@
 package com.example.budgetapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.mikephil.charting.data.PieEntry;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Keyboard extends AppCompatActivity {
+public class Keyboard<adapter> extends AppCompatActivity {
 
     private Spinner spnCategory;
     private TextView txtCategory;
@@ -67,7 +67,6 @@ public class Keyboard extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
-
         });
 
 
@@ -87,18 +86,8 @@ public class Keyboard extends AppCompatActivity {
 
             }
         });
-
-
-
-        List<PieEntry> values = new ArrayList<>();
-        values.add(new PieEntry(145,"leisure"));
-        values.add(new PieEntry(140, "bills"));
-        values.add(new PieEntry(175, "insurance"));
-        values.add(new PieEntry(65, "Transport"));
-        values.add(new PieEntry(230 , "Food"));
-        values.add(new PieEntry(157, "Clothing"));
-
     }
+
 
     private void showToast(String text){
         Toast.makeText(Keyboard.this, text, Toast.LENGTH_SHORT).show();

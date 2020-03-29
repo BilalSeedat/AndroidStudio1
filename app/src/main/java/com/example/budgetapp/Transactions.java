@@ -6,7 +6,9 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Transactions extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Transactions extends ArrayList<Keyboard> {
 
     private static final String TAG = "Transactions";
 
@@ -18,7 +20,8 @@ public class Transactions extends AppCompatActivity {
         Log.d(TAG,"onCreate: Started.");
         ListView mListView = (ListView) findViewById(R.id.transactionList);
 
-        //OneTransaction one = new OneTransaction(32.10, "29-03-20", "money");
+        TransactionListAdapter adapter = new TransactionListAdapter(this, R.layout.adapter_view_layout, lstAmount);
+        mListView.setAdapter(adapter);
 
     }
 }
