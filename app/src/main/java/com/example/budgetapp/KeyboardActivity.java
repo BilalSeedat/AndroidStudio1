@@ -94,6 +94,7 @@ public class KeyboardActivity extends AppCompatActivity {
                 amntInput.setText("");
                 showToast(lstAmount.toString());
 
+                TransactionsActivity.startTransactionsActivity(KeyboardActivity.this, lstAmount);
             }
         });
 
