@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private Button button;
 
     @Override
@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void openMainActivity(){
-        Intent intent = new Intent(this, Dashboard.class);
+        Intent intent = new Intent(this, DashboardActivity.class);
         startActivity(intent);
     }
 }

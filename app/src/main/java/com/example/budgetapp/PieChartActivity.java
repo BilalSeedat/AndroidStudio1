@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressLint("Registered")
-public class PieChart extends AppCompatActivity {
+public class PieChartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class Transactions extends AppCompatActivity {
+public class TransactionsActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 

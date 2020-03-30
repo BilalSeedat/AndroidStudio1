@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Calendar;
 
-public class Setting extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1;
     ImageView pictureChanger;
     Button uploadImage;
@@ -76,7 +76,7 @@ public class Setting extends AppCompatActivity {
                 int month = c.get(Calendar.MONTH);
                 int year = c.get(Calendar.YEAR);
 
-                dpd = new DatePickerDialog(Setting.this, new DatePickerDialog.OnDateSetListener() {
+                dpd = new DatePickerDialog(SettingActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         one.setText(dayOfMonth + "/" + (month+1) + "/" + year);
@@ -104,7 +104,7 @@ public class Setting extends AppCompatActivity {
     }
 
     public void openDashboard(){
-        Intent intent = new Intent(this, Dashboard.class);
+        Intent intent = new Intent(this, DashboardActivity.class);
         startActivity(intent);
     }
 

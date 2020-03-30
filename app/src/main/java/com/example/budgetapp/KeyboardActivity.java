@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Keyboard extends AppCompatActivity {
+public class KeyboardActivity extends AppCompatActivity {
 
     private static final String TAG = "Transactions";
 
@@ -33,7 +33,7 @@ public class Keyboard extends AppCompatActivity {
     ArrayList<OneTransaction> lstAmount = new ArrayList<>();
 
     ArrayList<OneTransaction> lstAmount = ArrayList<OneTransaction>();
-    Intent intent = new Intent(Keyboard.this, Transactions.class);
+    Intent intent = new Intent(KeyboardActivity.this, TransactionsActivity.class);
     intent.putParcelableArrayListExtra("ARRAY_LIST_KEY", lsta);
     startActivity(intent);
 
@@ -107,13 +107,13 @@ public class Keyboard extends AppCompatActivity {
     }
 
     public void openDashboard(){
-        Intent intent = new Intent(this, Dashboard.class);
+        Intent intent = new Intent(this, DashboardActivity.class);
         startActivity(intent);
     }
 
 
     private void showToast(String text){
-        Toast.makeText(Keyboard.this, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(KeyboardActivity.this, text, Toast.LENGTH_SHORT).show();
 
     }
 }

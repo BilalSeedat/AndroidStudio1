@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Dashboard extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +25,13 @@ public class Dashboard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         overridePendingTransition(0,0);
                     case R.id.add:
-                        startActivity(new Intent(getApplicationContext(), Keyboard.class));
+                        startActivity(new Intent(getApplicationContext(), KeyboardActivity.class));
                         overridePendingTransition(0,0);
                     case R.id.transaction:
-                        startActivity(new Intent(getApplicationContext(), Transactions.class));
+                        startActivity(new Intent(getApplicationContext(), TransactionsActivity.class));
                         overridePendingTransition(0,0);
                   //  case R.id.settings:
                    //     startActivity(new Intent(getApplicationContext(), Setting.class));
