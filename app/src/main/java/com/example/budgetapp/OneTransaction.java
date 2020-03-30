@@ -3,7 +3,9 @@ package com.example.budgetapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class OneTransaction implements Parcelable {
+
+public class OneTransaction implements Parcelable{
+
     private double amount;
     private String category;
 
@@ -61,4 +63,6 @@ public class OneTransaction implements Parcelable {
             return new OneTransaction[size];
         }
     };
+
 }
+

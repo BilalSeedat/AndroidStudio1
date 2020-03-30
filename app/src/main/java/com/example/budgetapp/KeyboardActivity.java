@@ -32,11 +32,6 @@ public class KeyboardActivity extends AppCompatActivity {
 
     ArrayList<OneTransaction> lstAmount = new ArrayList<>();
 
-    ArrayList<OneTransaction> lstAmount = ArrayList<OneTransaction>();
-    Intent intent = new Intent(KeyboardActivity.this, TransactionsActivity.class);
-    intent.putParcelableArrayListExtra("ARRAY_LIST_KEY", lsta);
-    startActivity(intent);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
