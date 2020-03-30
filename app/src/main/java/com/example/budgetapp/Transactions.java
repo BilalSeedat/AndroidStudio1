@@ -15,11 +15,10 @@ public class Transactions extends ArrayList<Keyboard> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transactions);
         Log.d(TAG,"onCreate: Started.");
-        ListView mListView = (ListView) findViewById(R.id.transactionList);
+        ListView mListView = (ListView) mListView.findViewById();
 
+        ArrayList<OneTransaction> lstAmount = new ArrayList<>();
         TransactionListAdapter adapter = new TransactionListAdapter(this, R.layout.adapter_view_layout, lstAmount);
         mListView.setAdapter(adapter);
 

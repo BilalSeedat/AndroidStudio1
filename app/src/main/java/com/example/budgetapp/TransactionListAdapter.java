@@ -1,12 +1,11 @@
 package com.example.budgetapp;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,17 +14,19 @@ import java.util.ArrayList;
 
 public class TransactionListAdapter extends ArrayAdapter<OneTransaction> {
     private static final String TAG = "TransactionListAdapter";
-    private Context mContext;
-    int mResource;
-    ListView mListView = (ListView) findViewbyId(R.id.transactionList);
+    private Transactions mContext;
+    private int mResource;
 
-    private Object findViewbyId(int transactionList) {
+
+    public TransactionListAdapter(Transactions keyboard, int adapter_view_layout, ArrayList<OneTransaction> lstAmount) {
+        super(keyboard,adapter_view_layout,lstAmount);
+        mContext = keyboard;
+        mResource = adapter_view_layout;
     }
 
-    public TransactionListAdapter(Keyboard keyboard, int adapter_view_layout, ArrayList<OneTransaction> lstAmount) {
-        super(keyboard, adapter_view_layout, lstAmount);
-        this.mContext = mContext;
-        this.mResource = mResource;
+    private static class ViewHolder{
+        TextView amount;
+        TextView category;
     }
 
     @NonNull
@@ -34,14 +35,28 @@ public class TransactionListAdapter extends ArrayAdapter<OneTransaction> {
         double amount = getItem(position).getAmount();
         String category = getItem(position).getCategory();
 
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        convertView = inflater.inflate(mResource,parent,false);
+        OneTransaction transaction = new OneTransaction(amount,category);
 
-        TextView tvAmount = (TextView) convertView.findViewById(R.id.textView1);
-        TextView tvCategory = (TextView) convertView.findViewById(R.id.textView2);
+        final View result;
 
-        tvAmount.setText((int) amount);
-        tvCategory.setText(category);
+        ViewHolder holder;
+
+        if (convertView == null){
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(mResource,parent,false);
+            holder = new ViewHolder();
+            holder.amount= (TextView) convertView.findViewById(R.id.textView1);
+            holder.category= (TextView) convertView.findViewById(R.id.textView2);
+            result = convertView;
+            convertView.setTag(holder);
+        }
+        else{
+            holder = (ViewHolder) convertView.getTag();
+            result = convertView;
+        }
+
+        holder.amount.setText((int) transaction.getAmount());
+        holder.category.setText(transaction.getCategory());
 
         return convertView;
 
