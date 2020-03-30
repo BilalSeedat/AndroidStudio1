@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     private Button button;
 
     @Override

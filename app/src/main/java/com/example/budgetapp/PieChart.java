@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressLint("Registered")
-public class piechart extends AppCompatActivity {
+public class PieChart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        PieChart pieChart = findViewById(R.id.piechart);
+        com.github.mikephil.charting.charts.PieChart pieChart = findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);
 
         List<PieEntry> values = new ArrayList<>();

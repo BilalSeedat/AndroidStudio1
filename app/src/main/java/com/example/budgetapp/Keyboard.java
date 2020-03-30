@@ -32,9 +32,10 @@ public class Keyboard extends AppCompatActivity {
 
     ArrayList<OneTransaction> lstAmount = new ArrayList<>();
 
-    Intent i = new Intent(Keyboard.this, Transactions.class);
-    i.putExtra("key", );
-    startActivity(i);
+    ArrayList<OneTransaction> lstAmount = ArrayList<OneTransaction>();
+    Intent intent = new Intent(Keyboard.this, Transactions.class);
+    intent.putParcelableArrayListExtra("ARRAY_LIST_KEY", lsta);
+    startActivity(intent);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
