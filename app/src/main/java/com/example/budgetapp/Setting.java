@@ -53,7 +53,6 @@ public class Setting extends AppCompatActivity {
 
         });
 
-
         nameChange = (EditText) findViewById(R.id.NameChanger);
         saveChanges = (Button) findViewById(R.id.savechanges);
 
@@ -61,7 +60,7 @@ public class Setting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveData();
-
+                openDashboard();
             }
         });
 
@@ -102,6 +101,11 @@ public class Setting extends AppCompatActivity {
         editor.putString(NEW_DATE, two);
         editor.apply();
 
+    }
+
+    public void openDashboard(){
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 
 }

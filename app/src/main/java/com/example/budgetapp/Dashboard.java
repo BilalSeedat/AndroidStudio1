@@ -33,9 +33,9 @@ public class Dashboard extends AppCompatActivity {
                     case R.id.transaction:
                         startActivity(new Intent(getApplicationContext(), Transactions.class));
                         overridePendingTransition(0,0);
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Setting.class));
-                        overridePendingTransition(0,0);
+                  //  case R.id.settings:
+                   //     startActivity(new Intent(getApplicationContext(), Setting.class));
+                     //   overridePendingTransition(0,0);
                 }
                 return false;
             }

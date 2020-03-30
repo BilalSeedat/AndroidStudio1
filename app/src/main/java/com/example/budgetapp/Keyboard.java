@@ -1,5 +1,6 @@
 package com.example.budgetapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,15 +18,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Keyboard<adapter> extends AppCompatActivity {
+public class Keyboard extends AppCompatActivity {
+
+    private static final String TAG = "Transactions";
 
     private Spinner spnCategory;
     private TextView txtCategory;
 
-    Double amount;
+    Double amnt;
 
     EditText amntInput;
     Button submit;
+    Button back;
 
     ArrayList<OneTransaction> lstAmount = new ArrayList<>();
 
@@ -33,6 +37,7 @@ public class Keyboard<adapter> extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keyboard);
+        Log.d(TAG, "onCreate: Started.");
 
         spnCategory = findViewById(R.id.spnCategory);
         txtCategory = findViewById(R.id.txtCategory);
@@ -72,6 +77,7 @@ public class Keyboard<adapter> extends AppCompatActivity {
 
         amntInput = (EditText) findViewById(R.id.amntInput);
         submit = (Button) findViewById(R.id.submit);
+        back = (Button) findViewById(R.id.back);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,9 +89,21 @@ public class Keyboard<adapter> extends AppCompatActivity {
                 System.out.println(lstAmount);
                 amntInput.setText("");
                 showToast(lstAmount.toString());
-
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDashboard();
+            }
+        });
+
+    }
+
+    public void openDashboard(){
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 
 
