@@ -13,6 +13,10 @@ public class TransactionsActivity extends AppCompatActivity {
 
     public static String TRANSACTIONS_KEY = "TRANSACTIONS_KEY";
 
+    KeyboardActivity k = new KeyboardActivity();
+
+    ArrayList<OneTransaction> lst = k.lstAmount;
+
     private ArrayList<OneTransaction> transactions;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +26,7 @@ public class TransactionsActivity extends AppCompatActivity {
         transactions = savedInstanceState.getParcelableArrayList(TRANSACTIONS_KEY);
 
         ListView mListView = findViewById(R.id.transactionList);
-        TransactionListAdapter adapter = new TransactionListAdapter(this, R.layout.adapter_view_layout, lstAmount);
+        TransactionListAdapter adapter = new TransactionListAdapter(this, R.layout.adapter_view_layout, lst);
         mListView.setAdapter(adapter);
     }
 

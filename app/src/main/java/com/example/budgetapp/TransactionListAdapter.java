@@ -16,6 +16,8 @@ public class TransactionListAdapter extends ArrayAdapter<OneTransaction> {
     private Context mContext;
     int mResource;
 
+
+
     public TransactionListAdapter(Context context, int resource, ArrayList<OneTransaction> objects) {
         super(context, resource, objects);
         mContext = context;
