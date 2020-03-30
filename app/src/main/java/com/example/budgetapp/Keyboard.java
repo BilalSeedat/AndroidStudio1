@@ -1,9 +1,7 @@
 package com.example.budgetapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +31,10 @@ public class Keyboard extends AppCompatActivity {
     Button back;
 
     ArrayList<OneTransaction> lstAmount = new ArrayList<>();
+
+    Intent i = new Intent(Keyboard.this, Transactions.class);
+    i.putExtra("key", );
+    startActivity(i);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +92,7 @@ public class Keyboard extends AppCompatActivity {
                 System.out.println(lstAmount);
                 amntInput.setText("");
                 showToast(lstAmount.toString());
+
             }
         });
 
@@ -102,23 +103,6 @@ public class Keyboard extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void saveList(ArrayList<OneTransaction> lstAmount) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
-        SharedPreferences.Editor editor = prefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(lstAmount);
-        editor.putString(String.valueOf(lstAmount), json);
-        editor.apply();
-    }
-
-    public ArrayList<OneTransaction> getArrayList(lstA){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
-        Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<ArrayList<String>>() {}.getType();
-        return gson.fromJson(json, type);
     }
 
     public void openDashboard(){
