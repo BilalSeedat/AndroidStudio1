@@ -90,7 +90,6 @@ public class KeyboardActivity extends AppCompatActivity {
                 showToast(lstAmount.toString());
 
                 TransactionsActivity.startTransactionsActivity(KeyboardActivity.this, lstAmount);
-
             }
         });
 
